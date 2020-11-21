@@ -11,7 +11,7 @@ class Solution:
         signFlag = False
         #Remove whitespace
         s = s.lstrip()
-        #STRING IS NOT EMPTY
+        #STRING CANT BE NOT EMPTY
         if (s == ""):
             return 0
         #STRING CONTAINS NO NUMBERS
@@ -20,11 +20,13 @@ class Solution:
         #DOES NOT START WITH + - OR s[0] !=NUMBER
         elif not(s.startswith('-') or s.startswith('+') or s[0].isdigit()):
             return 0
+        #STRIP THE FIRST SIGN
         elif (s.startswith('-')):
             signFlag = True
             s = s[1:]
         elif (s.startswith('+')):
             s = s[1:]
+            ##REGEX FILTERS
         if (re.search("^[+].",s) or re.search("^[-].",s) or re.search("^[a-zA-Z]",s) or re.search("[0-9] [0-9]",s) or re.search("\+\s",s) or re.search("\-\s",s)or s.startswith(' ')):
             return 0
         splits = re.split("\s|[a-zA-Z]|\-|\+",s,1)
