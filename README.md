@@ -13,7 +13,7 @@
 
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Tag          | Note| 
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|-----|
-0001| [Two Sum](https://leetcode.com/problems/two-sum/) | [C#](./C#/question1.cs) [C++](./C++/question1.cpp) [Python](./Python/question1.py)  | *_O(n)_ |  _O(n)_* | Easy         | | Spacer To Access Alignment |
+0001| [Two Sum](https://leetcode.com/problems/two-sum/) | [C#](./leetCode/C#/question1.cs) [C++](./leetCode/C++/question1.cpp) [Python](./leetCode/Python/question1.py)  | *_O(n)_ |  _O(n)_* | Easy         | | Spacer To Access Alignment |
 
 
 
