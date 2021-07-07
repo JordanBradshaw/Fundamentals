@@ -14,5 +14,3 @@ public class q1containsDuplicates {
             return false;
         }
     }
-
-}
