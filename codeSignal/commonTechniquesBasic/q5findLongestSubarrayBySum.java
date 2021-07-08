@@ -1,28 +1,42 @@
 package Fundamentals.codeSignal.commonTechniquesBasic;
 
-import java.util.Deque;
-import java.util.LinkedList;
-
 public class q5findLongestSubarrayBySum {
     public static int[] findLongestSubarrayBySum(int s, int[] arr) {
-    Deque<Integer> q = new LinkedList<Integer>();
-    int li = 0, ri = 0;
-    int accum = 0 ;
-    while (li <= ri && accum != s){
-        if (accum < s){
-        accum += arr[ri++];
+        int li = 0, ri = 0;
+        int accum = 0;
+        while (li <= ri && accum != s) {
+            while (ri < arr.length && accum < s) {
+                accum = ((accum + arr[ri]) == s) ? accum + arr[ri] : accum + arr[ri++];
+            }
+
+            if (accum > s) {
+                if (li == ri) {
+                    li++;
+                    ri++;
+                    if (li == arr.length)
+                        return new int[] { -1 };
+                    accum = arr[li];
+                    continue;
+                }
+                    accum = ((accum - arr[li]) == s) ? accum - arr[li++] : accum - arr[li++];
+                while (accum > s && ri > li)
+                    accum = ((accum - arr[ri]) == s) ? accum - arr[ri] : accum - arr[ri--];
+            }
+            if (accum == s) {
+                while (li > 0 && arr[li - 1] == 0) {
+                    li--;
+                }
+                while (ri < arr.length - 1 && arr[ri + 1] == 0) {
+                    ri++;
+                }
+            }
+
         }
-        else if (accum > s){
-            accum -= arr[li++];
-            while(accum + arr[li-1] > s) accum -= arr[ri--];
-        }
-
-
-
+        return new int[] { li + 1, ri + 1 };
     }
-    return new int[]{li,ri};
-}
+
     public static void main(String[] args) {
-        findLongestSubarrayBySum(12,new int[] {1, 2, 3, 7, 5});
+        findLongestSubarrayBySum(12,
+                new int[] { 1, 2, 3, 7, 5 });
     }
 }
