@@ -1,5 +1,7 @@
 using System;
-/* FIRST TIME USING C# 
+/* 
+https://leetcode.com/problems/two-sum/
+FIRST TIME USING C# 
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
